@@ -26,7 +26,16 @@ Aplicativo criado em React Native com Expo para apresentar um perfil profissiona
 - **Projetos/Contato:** ...
 
 ## Organização do código
-- ...
+- perfil-dev-jr/
+    │
+    ├── App.js
+    ├── screens/
+    │   ├── PerfilScreen.js
+    │   ├── HabilidadesScreen.js
+    │   └── ProjetosScreen.js
+    ├── assets/
+    │   └── imagem-perfil.png
+    └── README.md
 
 ## Diferenciais
 - ...
