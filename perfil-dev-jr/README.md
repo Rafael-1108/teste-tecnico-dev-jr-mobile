@@ -1,4 +1,4 @@
-```markdown
+
 # Perfil Dev Jr
 
 ## Descrição
@@ -51,4 +51,3 @@ Aplicativo criado em React Native com Expo para apresentar um perfil profissiona
 
 ## Autor
 Rafael Santos Mendes
-```
