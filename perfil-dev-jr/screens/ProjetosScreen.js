@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
 
-export default function ProjectsContactScreen() {
+export default function ProjetosScreen() {
   const [message, setMessage] = useState('');
 
   const handleSend = () => {
@@ -15,82 +15,148 @@ export default function ProjectsContactScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.sectionTitle}>Meus Projetos</Text>
+      <Text style={styles.sectionTitle}>🚀 Meus Projetos</Text>
       
       <View style={styles.projectCard}>
-        <Text style={styles.projectTitle}>🚀 App App_Name</Text>
-        <Text style={styles.projectDescription}>Aplicativo de finanças pessoais desenvolvido em React Native.</Text>
+        <View style={styles.projectHeader}>
+          <Text style={styles.projectIcon}>📰</Text>
+          <Text style={styles.projectTitle}>Kickoff - Site de notícias esportivas</Text>
+        </View>
+        <Text style={styles.projectDescription}>Aplicativo completo para controle de finanças pessoais desenvolvido em React Native com integração de APIs.</Text>
       </View>
       
       <View style={styles.projectCard}>
-        <Text style={styles.projectTitle}>📦 EcoMart</Text>
-        <Text style={styles.projectDescription}>E-commerce focado em produtos sustentáveis com Expo Go.</Text>
+        <View style={styles.projectHeader}>
+          <Text style={styles.projectIcon}>🃏</Text>
+          <Text style={styles.projectTitle}>CollectionHub - Site de colecionáveis de pokémon</Text>
+        </View>
+        <Text style={styles.projectDescription}>E-commerce inovador focado em produtos sustentáveis e ecológicos com Expo Go.</Text>
       </View>
 
-      <Divider />
+      <View style={styles.divider} />
 
-      <Text style={styles.sectionTitle}>Contato & Redes</Text>
-      <Text style={styles.infoText}>📧 email@devstart.com</Text>
-      <Text style={styles.infoText}>🔗 github.com/seu-usuario</Text>
-      <Text style={styles.infoText}>💼 linkedin.com/in/seu-perfil</Text>
+      <Text style={styles.sectionTitle}>📞 Contato & Redes</Text>
+      <View style={styles.infoContainer}>
+        <Text style={styles.infoText}>📧 rafael.mendes5227@gmail.com</Text>
+        <Text style={styles.infoText}>🔗 https://github.com/Rafael-1108</Text>
+        <Text style={styles.infoText}>💼 https://www.linkedin.com/in/rafael-santos-5a2aa4349/</Text>
+      </View>
       
+      <Text style={styles.messageTitle}>Envie uma mensagem</Text>
       <TextInput
         style={styles.input}
         placeholder="Digite sua mensagem aqui..."
+        placeholderTextColor="#94a3b8"
         value={message}
         onChangeText={setMessage}
         multiline
       />
       
-      <Button title="Enviar contato" onPress={handleSend} color="#007AFF" />
+      <TouchableOpacity style={styles.button} onPress={handleSend}>
+        <Text style={styles.buttonText}>Enviar contato</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
 
-// Pequeno componente interno para separar as seções de forma elegante
-const Divider = () => <View style={{ height: 1, backgroundColor: '#ccc', marginVertical: 20 }} />;
-
 const styles = StyleSheet.create({
   container: { 
-    padding: 20, 
-    backgroundColor: '#fff', 
+    paddingVertical: 20,
+    paddingHorizontal: 16, 
+    backgroundColor: '#f8fafc', 
     flexGrow: 1 
   },
   sectionTitle: { 
-    fontSize: 20, 
-    fontWeight: 'bold', 
-    marginBottom: 15, 
-    color: '#111' 
+    fontSize: 24, 
+    fontWeight: '700', 
+    marginBottom: 16, 
+    color: '#0f172a' 
   },
   projectCard: { 
-    padding: 15, 
-    backgroundColor: '#f5f5f5', 
-    borderRadius: 8, 
-    marginBottom: 12 
+    padding: 16, 
+    backgroundColor: '#fff', 
+    borderRadius: 12, 
+    marginBottom: 14,
+    borderLeftWidth: 4,
+    borderLeftColor: '#1e40af',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 3
+  },
+  projectHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  projectIcon: {
+    fontSize: 24,
+    marginRight: 10
   },
   projectTitle: { 
-    fontSize: 16, 
-    fontWeight: 'bold', 
-    color: '#007AFF' 
+    fontSize: 18, 
+    fontWeight: '700', 
+    color: '#1e40af'
   },
   projectDescription: { 
     fontSize: 14, 
-    color: '#555', 
-    marginTop: 4 
+    color: '#64748b', 
+    lineHeight: 20
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#e2e8f0',
+    marginVertical: 24
+  },
+  infoContainer: {
+    backgroundColor: '#fff',
+    padding: 16,
+    borderRadius: 10,
+    marginBottom: 20,
+    borderLeftWidth: 4,
+    borderLeftColor: '#10b981'
   },
   infoText: { 
     fontSize: 15, 
     marginBottom: 8, 
-    color: '#333' 
+    color: '#334155',
+    fontWeight: '500'
+  },
+  messageTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#0f172a',
+    marginBottom: 10
   },
   input: { 
     borderWidth: 1, 
-    borderColor: '#ccc', 
-    borderRadius: 6, 
-    padding: 12, 
-    height: 100, 
+    borderColor: '#cbd5e1', 
+    borderRadius: 10, 
+    padding: 14, 
+    height: 110, 
     textAlignVertical: 'top', 
-    marginTop: 15, 
-    marginBottom: 15 
+    marginBottom: 16,
+    backgroundColor: '#fff',
+    fontSize: 14,
+    color: '#0f172a'
+  },
+  button: {
+    backgroundColor: '#1e40af',
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    borderRadius: 10,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
+    marginBottom: 20
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700'
   }
 });

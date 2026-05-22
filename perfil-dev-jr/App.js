@@ -14,7 +14,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Drawer.Navigator
-          initialRouteName="Home"
+          initialRouteName="Perfil"
           screenOptions={{
             headerStyle: {
               backgroundColor: '#1e40af',
